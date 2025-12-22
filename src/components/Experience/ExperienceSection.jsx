@@ -10,10 +10,10 @@ const ExperienceSection = () => {
     {
       id: 1,
       company: "Resulticks Edge Solution Technologies",
-      position: "Frontend Developer Intern",
+      position: "Software Engineer",
       period: "Jan 2023 - Present",
       description:
-        "Currently working as a Frontend Developer a product-based web application company, focusing on building responsive and scalable user interfaces using React, HTML5, CSS3, and JavaScript. Applying core software engineering principles to create clean, modular, and maintainable code. Collaborating closely with UI/UX designers, backend developers, and QA teams to deliver high-quality, user-centric web applications aligned with product goals and business requirements.",
+        "Currently working as a software engineer at a product-based web application company, focusing on building responsive and scalable user interfaces using React, HTML, CSS, and JavaScript. Applying core software engineering principles to create clean, modular, and maintainable code. Collaborating closely with UI/UX designers, backend developers, and QA teams to deliver high-quality, user-centric web applications aligned with product goals and business requirements.",
       technologies: ["React", "JavaScript", "HTML", "CSS", "Git"],
       isLatest: true,
     },

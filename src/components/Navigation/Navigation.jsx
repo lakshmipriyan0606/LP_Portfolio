@@ -15,6 +15,7 @@ import {
   ChevronRight,
   Settings
 } from 'lucide-react';
+import logo from  '../../assets/images/logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -90,9 +91,7 @@ const Navigation = () => {
               whileTap={{ scale: 0.95 }}
             >
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">LP</span>
-                </div>
+                  <img src={logo} alt="Logo" />
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 rounded-xl blur opacity-30 animate-pulse"></div>
               </div>
               <div className="hidden sm:block">

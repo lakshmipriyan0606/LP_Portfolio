@@ -22,6 +22,7 @@ import {
   Award,
 } from "lucide-react";
 import image1 from "../../assets/images/profile-img.jpg";
+import logo from  '../../assets/images/logo.png';
 
 const ModernSidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -116,11 +117,8 @@ const ModernSidebar = () => {
             className="flex items-center space-x-3"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">LP</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-xl blur opacity-30 animate-pulse"></div>
+            <div >
+               <img src={logo} alt="Logo" width={40} height={40}  className="invert brightness-0 " />
             </div>
             <div>
               <h1 className="text-lg font-bold text-white">Lakshmi Priyan</h1>
@@ -159,14 +157,11 @@ const ModernSidebar = () => {
             className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
           >
             {/* Profile Image */}
             <div className="relative mx-auto mb-6 w-40 h-40">
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-1"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full "
               >
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-900">
                   <img
@@ -178,7 +173,7 @@ const ModernSidebar = () => {
               </motion.div>
 
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-300 blur-md opacity-50"
+                className="absolute inset-0 rounded-full "
                 animate={{
                   scale: [1, 1.1, 1],
                   opacity: [0.5, 0.4, 0.5],
@@ -278,6 +273,8 @@ const ModernSidebar = () => {
       <AnimatePresence>
         {isSidebarOpen && (
           <>
+
+            
             {/* Backdrop */}
             <motion.div
               className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
@@ -286,6 +283,7 @@ const ModernSidebar = () => {
               exit={{ opacity: 0 }}
               onClick={() => setIsSidebarOpen(false)}
             />
+            
 
             {/* Mobile Sidebar */}
             <motion.div
@@ -301,8 +299,7 @@ const ModernSidebar = () => {
                   {/* Profile Image */}
                   <div className="relative mx-auto mb-6 w-40 h-40">
                     <motion.div
-                      className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-1"
-                      animate={{ rotate: 360 }}
+                      className="absolute inset-0 rounded-full  p-1"
                       transition={{
                         duration: 16,
                         repeat: Infinity,
@@ -319,7 +316,7 @@ const ModernSidebar = () => {
                     </motion.div>
 
                     <motion.div
-                      className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-300 blur-md opacity-50"
+                      className="absolute inset-0 rounded-full "
                       animate={{
                         scale: [1, 1.1, 1],
                         opacity: [0.5, 0.4, 0.5],

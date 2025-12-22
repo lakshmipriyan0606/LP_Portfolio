@@ -209,7 +209,7 @@ const ProjectsSection = () => {
             className="text-center mt-16"
           >
             <motion.a
-              href="https://github.com/lakshmipriyan0606"
+              href="https://github.com/lakshmipriyan0606?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 glass-effect rounded-full font-semibold hover:glow-effect transition-all duration-300"

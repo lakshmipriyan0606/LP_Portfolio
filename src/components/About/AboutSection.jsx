@@ -8,7 +8,7 @@ const AboutSection = () => {
 
   const stats = [
     { number: "15+", label: "Technologies", icon: Code2 },
-    { number: "50+", label: "Projects", icon: Rocket },
+    { number: "10+", label: "Projects", icon: Rocket },
     { number: "3+", label: "Years Experience", icon: Zap },
     { number: "∞", label: "Coffee Cups", icon: Coffee },
   ];

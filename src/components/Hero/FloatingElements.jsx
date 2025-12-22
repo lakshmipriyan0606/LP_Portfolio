@@ -24,51 +24,6 @@ const FloatingElements = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {balloons.map((balloon, index) => (
-        <motion.div
-          key={index}
-          className={`absolute ${balloon.size} bg-gradient-to-b ${balloon.color} shadow-lg opacity-90`}
-          style={{
-            left: balloon.x,
-            top: "-20%",
-            borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%",
-          }}
-          animate={{
-            y: ["0vh", "130vh"],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 25,
-            delay: balloon.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          {/* ✨ Shine */}
-          <div className="absolute top-2 left-3 w-3 h-6 bg-white opacity-30 rounded-full rotate-45" />
-
-          {/* 🔻 Tail */}
-          <div
-            className="absolute bottom-[-6px] left-1/2"
-            style={{
-              width: 0,
-              height: 0,
-              borderLeft: "6px solid transparent",
-              borderRight: "6px solid transparent",
-              borderTop: `8px solid ${getTailColor(balloon.color)}`,
-              transform: "translateX(-50%)",
-            }}
-          />
-
-          {/* 🧵 String */}
-          <motion.div
-            className="absolute left-1/2 top-full w-px h-24 bg-gray-300 opacity-50"
-            style={{ transform: "translateX(-50%)" }}
-            animate={{ rotate: [1, -1, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
-      ))}
 
       {/* Floating bubbles */}
       {Array.from({ length: 10 }).map((_, i) => (
