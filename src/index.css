@@ -1,9 +1,9 @@
+/* Import the modern design system */
+@import './styles/design-system.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import the modern design system */
-@import './styles/design-system.css';
 
 /* Base styles using the new design system */
 * {

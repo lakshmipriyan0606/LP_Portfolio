@@ -15,12 +15,11 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedTheme) {
       setIsDark(savedTheme === 'dark');
     } else {
-      setIsDark(prefersDark);
+      setIsDark(false);
     }
   }, []);
 

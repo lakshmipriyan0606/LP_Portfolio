@@ -1,0 +1,57 @@
+LAKSHMI PRIYAN D
+MERN Stack Developer | Full Stack Developer | React.js Developer
+Chennai, Tamil Nadu | +91 77085 61615 | lakshmipriyan0606@gmail.com
+LinkedIn: linkedin.com/in/lakshmipriyan0606 | GitHub: github.com/lakshmipriyan0606
+Portfolio: lakshmipriyan-portfolio.vercel.app
+
+=========================================
+PROFESSIONAL SUMMARY
+=========================================
+MERN Stack Developer with 2.8+ years of experience designing and delivering scalable full-stack web applications for enterprise B2B SaaS platforms. Proficient in React.js, JavaScript (ES6+), TypeScript, Node.js, Express.js, MongoDB, Redux Toolkit, and RESTful API development, with expertise in full-stack architecture, reusable component libraries, database integration, JWT authentication, and frontend performance optimization in Agile/Scrum environments.
+
+=========================================
+TECHNICAL SKILLS
+=========================================
+- Frontend: React.js, Next.js, JavaScript (ES6+), TypeScript, HTML5, CSS3, Tailwind CSS, Bootstrap, React Hooks, React Router, React Flow, Webpack, Vite, Responsive Web Design
+- State Management: Redux Toolkit, Redux Persist, TanStack Query (React Query), Context API, Zustand
+- Backend: Node.js, Express.js, RESTful API Development, MongoDB, Mongoose, JWT Authentication, bcrypt, Middleware, CRUD Operations, MVC Architecture, Data Validation, Error Handling
+- Full Stack: MERN Stack, Full-Stack Development, Frontend-Backend Integration, API Integration, Component-Based Architecture, Server-Side Rendering
+- Tools & Practices: Git, GitHub, Axios, Postman, VS Code, Jira, Vercel, npm, ESLint, Agile/Scrum, Code Review, Cross-Functional Collaboration, Technical Documentation
+
+=========================================
+PROFESSIONAL EXPERIENCE
+=========================================
+Associate Software Engineer
+Resulticks Edge Solution Pvt. Ltd | Jan 2024 – Present
+- Engineered enterprise full-stack React.js features using JavaScript (ES6+), TypeScript, Node.js, and Express.js for a B2B marketing automation SaaS platform, delivering scalable modules across Audience, Campaign, Dashboard, Analytics, and Notification.
+- Architected 20+ reusable UI components using React.js, Redux Toolkit, Context API, and Kendo UI following component-based architecture and MVC design patterns, reducing feature development time across 5+ product modules.
+- Designed and integrated 15+ RESTful APIs via Axios and Express.js for async data fetching, real-time state synchronization, and form workflows.
+- Optimized React.js frontend performance by 25% via lazy loading, code splitting, memoization (useMemo, useCallback), and render optimization, reducing page load time.
+- Built a multi-campaign visual workflow builder using React Flow with node-based UI, drag-and-drop canvas, and Redux Toolkit state management.
+- Collaborated in Agile/Scrum sprints with product, design, backend, and QA teams, contributing to peer code reviews and retrospectives to deliver 5+ production-ready features.
+
+Full Stack Developer Intern (MERN)
+Error Makes Clever | Jul 2023 – Nov 2023
+- Built responsive frontend modules using React.js, JavaScript (ES6+), HTML5, CSS3, and Tailwind CSS with reusable component patterns.
+- Developed RESTful APIs with Node.js, Express.js, MongoDB, and Mongoose, implementing CRUD operations, data validation, and error handling.
+- Implemented JWT authentication with bcrypt password hashing, protected Express.js middleware, and session management as part of a MERN application.
+
+=========================================
+PROJECTS
+=========================================
+Sastikaa Travel – Full-Stack MERN Travel Booking Platform
+- Developed a MERN stack travel booking platform using React.js, Node.js, Express.js, MongoDB, Mongoose, Redux Toolkit, Axios, and RESTful APIs supporting destination discovery, package browsing, and booking workflows.
+- Engineered a scalable Node.js/Express.js REST API backend with MongoDB/Mongoose implementing full CRUD operations, MVC architecture, and error handling middleware.
+- Implemented JWT authentication, bcrypt password hashing, role-based protected routes, and security middleware for registration, login, and booking access control.
+- Achieved 30% performance improvement via lazy loading, image optimization, code splitting, and TanStack Query server-state caching.
+
+DailyTracker – DSA and Knowledge Tracker
+- Collaborative learning platform designed to help developers practice DSA, share solutions, and track daily progress.
+- Built with Next.js, React.js, Redux Toolkit, NextAuth.js, and MongoDB. Includes coding rooms, daily problems, MCQ conceptual tests, streak tracking, and comments.
+
+=========================================
+EDUCATION
+=========================================
+Bachelor of Engineering in Electrical & Electronics Engineering
+Government College of Engineering, Bargur | 2019 — 2023
+CGPA: 8.5 / 10
