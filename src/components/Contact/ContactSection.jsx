@@ -31,7 +31,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative py-32 md:py-40 bg-[#FCFCFD] px-8 md:px-16 overflow-hidden flex flex-col justify-between min-h-[90vh]"
+      className="relative py-16 md:py-20 bg-[#FCFCFD] px-8 md:px-16 overflow-hidden flex flex-col justify-between"
       ref={ref}
     >
       {/* Blueprint background grid pattern */}

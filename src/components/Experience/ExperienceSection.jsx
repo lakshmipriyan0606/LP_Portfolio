@@ -116,7 +116,7 @@ const ExperienceSection = () => {
   return (
     <section
       id="experience"
-      className="py-28 md:py-36 bg-[#FCFCFD] border-b border-[#E4EAF2] px-6 md:px-16 relative overflow-hidden"
+      className="py-16 md:py-20 bg-[#FCFCFD] border-b border-[#E4EAF2] px-6 md:px-16 relative overflow-hidden"
       ref={containerRef}
     >
       {/* Background blueprint details */}

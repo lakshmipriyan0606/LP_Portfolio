@@ -242,7 +242,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="py-28 md:py-36 bg-[#FCFCFD] border-b border-[#E4EAF2] px-8 md:px-16" ref={containerRef}>
+    <section id="skills" className="py-16 md:py-20 bg-[#FCFCFD] border-b border-[#E4EAF2] px-8 md:px-16" ref={containerRef}>
       <motion.div
         className="max-w-[1200px] mx-auto flex flex-col gap-4"
         variants={containerVariants}

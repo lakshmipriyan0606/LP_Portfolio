@@ -43,7 +43,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-28 md:py-36 bg-[#FCFCFD] border-b border-[#E4EAF2] px-8 md:px-16">
+    <section id="projects" className="py-16 md:py-20 bg-[#FCFCFD] border-b border-[#E4EAF2] px-8 md:px-16">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-4">
         
         {/* Section Label */}
