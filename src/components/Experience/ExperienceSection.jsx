@@ -55,11 +55,11 @@ const ExperienceSection = () => {
       id: 2024,
       year: "2024",
       category: "BUILD & SCALE",
-      title: "Resulticks Edge",
-      subtitle: "Associate Engineer",
+      title: "Joined Resulticks",
+      subtitle: "Software Eng. Trainee → Associate",
       company: "Resulticks Edge Solution Pvt. Ltd",
-      role: "Associate Software Engineer",
-      period: "Jan 2024 — Present",
+      role: "Software Engineer Trainee → Associate Software Engineer",
+      period: "Jan 2024 — Jun 2024 · Promoted Jul 2024",
       desc: "Engineered full-stack React features for B2B marketing automation SaaS platform.",
       details: [
         "Engineered enterprise full-stack React.js features using JavaScript (ES6+), TypeScript, Node.js, and Express.js for modules across Audience, Campaign, Dashboard, Analytics, and Notification.",
@@ -74,11 +74,11 @@ const ExperienceSection = () => {
       id: 2026,
       year: "2026",
       category: "IMPACT & GROWTH",
-      title: "Resulticks Edge",
-      subtitle: "Current Scale & Performance",
+      title: "Associate Engineer",
+      subtitle: "Resulticks · Current Role",
       company: "Resulticks Edge Solution Pvt. Ltd",
       role: "Associate Software Engineer",
-      period: "Jan 2024 — Present",
+      period: "Jul 2024 — Present · 2+ yrs",
       desc: "Optimizing frontend performance, React Flow visual canvas features, and Agile integrations.",
       details: [
         "Optimized React.js frontend performance by 25% via lazy loading, code splitting, memoization (useMemo, useCallback), and render optimizations, reducing page load times.",
@@ -153,7 +153,7 @@ const ExperienceSection = () => {
         </div>
 
         {/* TIMELINE SVG CONTAINER - DESKTOP VIEW */}
-        <div className="hidden lg:block relative w-full h-[400px] mt-10">
+        <div className="hidden lg:block relative w-full h-[460px] mt-10">
           
           {/* Faint Background coordinate guides */}
           <div className="absolute left-0 top-[80px] bottom-0 w-[1px] border-l border-dashed border-[#E4EAF2]" />
@@ -164,19 +164,19 @@ const ExperienceSection = () => {
             ENGINEERING PROGRESSION
           </span>
 
-          {/* SVG Connector S-Curve Track */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400" fill="none">
-            {/* Background dashed route */}
+          {/* SVG Connector — viewBox matches container (1000×460) for 1:1 pixel mapping */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 460" preserveAspectRatio="none" fill="none">
+            {/* Background ghost route */}
             <path
-              d="M 50 100 H 500 C 580 100, 600 130, 680 130 C 760 130, 780 100, 920 100"
+              d="M 50 200 C 200 200, 350 170, 500 165 C 660 160, 780 120, 950 115"
               stroke="#D5DDE8"
               strokeWidth="5"
               strokeLinecap="round"
-              opacity="0.3"
+              opacity="0.4"
             />
-            {/* Active blue route */}
+            {/* Active animated growth curve */}
             <motion.path
-              d="M 50 100 H 500 C 580 100, 600 130, 680 130 C 760 130, 780 100, 920 100"
+              d="M 50 200 C 200 200, 350 170, 500 165 C 660 160, 780 120, 950 115"
               stroke="#2563EB"
               strokeWidth="3.5"
               strokeLinecap="round"
@@ -185,30 +185,48 @@ const ExperienceSection = () => {
               transition={{ duration: 1.5, ease: "easeInOut" }}
             />
 
-            {/* Vertical connector lines down to cards */}
-            <motion.path d="M 150 100 V 160" stroke="#2563EB" strokeWidth="1.25" strokeDasharray="3 3" />
-            <motion.path d="M 500 100 V 160" stroke="#2563EB" strokeWidth="1.25" strokeDasharray="3 3" />
-            <motion.path d="M 750 114 V 160" stroke="#2563EB" strokeWidth="1.25" strokeDasharray="3 3" />
+            {/*
+              Connector lines — from node center downward to card top (y=240)
+              x positions match node x: 2023=150, 2024=500, 2026=860
+            */}
+            <motion.path d="M 150 200 V 238" stroke="#2563EB" strokeWidth="1.25" strokeDasharray="3 3" />
+            <motion.path d="M 500 165 V 238" stroke="#2563EB" strokeWidth="1.25" strokeDasharray="3 3" />
+            <motion.path d="M 860 120 V 238" stroke="#2563EB" strokeWidth="1.25" strokeDasharray="3 3" />
 
-            {/* Active signals moving through track loop */}
+            {/* Animated signal dot tracks the growth curve */}
             <motion.circle r="4" fill="#3B82F6">
               <animateMotion
                 dur="7s"
                 repeatCount="indefinite"
-                path="M 50 100 H 500 C 580 100, 600 130, 680 130 C 760 130, 780 100, 920 100"
+                path="M 50 200 C 200 200, 350 170, 500 165 C 660 160, 780 120, 950 115"
               />
             </motion.circle>
           </svg>
 
-          {/* Node Labels above track */}
-          <div className="absolute top-[34px] left-0 w-full flex justify-between px-[100px] text-[10px] font-mono font-bold tracking-widest text-[#8491A6]">
-            <span className="w-[100px] text-center">FOUNDATIONS</span>
-            <span className="w-[100px] text-center ml-[70px]">BUILD & SCALE</span>
-            <span className="w-[100px] text-center mr-[40px]">IMPACT & GROWTH</span>
+          {/*
+            Labels — each sits ~28px ABOVE its node dot.
+            Dot tops: 2023=190px, 2024=155px, 2026=110px
+            Label tops: 2023=158px, 2024=123px, 2026=78px
+            x% — centered around node x: 15%, 50%, 86%
+          */}
+          <div className="absolute text-center" style={{ top: '158px', left: 'calc(15% - 65px)', width: '130px' }}>
+            <span className="text-[9px] font-mono font-bold tracking-widest text-[#8491A6] uppercase">Foundations</span>
+          </div>
+          <div className="absolute text-center" style={{ top: '123px', left: 'calc(50% - 70px)', width: '140px' }}>
+            <span className="text-[9px] font-mono font-bold tracking-widest text-[#8491A6] uppercase">Build &amp; Scale</span>
+          </div>
+          <div className="absolute text-center" style={{ top: '78px', left: 'calc(86% - 75px)', width: '150px' }}>
+            <span className="text-[9px] font-mono font-bold tracking-widest text-[#8491A6] uppercase">Impact &amp; Growth</span>
           </div>
 
-          {/* Node Dots absolute overlays with reactive hover scale/glowing styles */}
-          <div className="absolute top-[90px] left-[140px] z-10 flex h-5 w-5 items-center justify-center">
+          {/*
+            Node dots — centered on path y-coordinates (viewBox 1000×460 = 1:1 px).
+            Dot is 20×20px → top = y−10, left = calc(x% − 10px)
+            2023: y=200 → top=190px, x=150/1000=15% → left=calc(15%−10px)
+            2024: y=165 → top=155px, x=500/1000=50% → left=calc(50%−10px)
+            2026: y=120 → top=110px, x=860/1000=86% → left=calc(86%−10px)
+          */}
+          <div className="absolute z-10 flex h-5 w-5 items-center justify-center" style={{ top: '190px', left: 'calc(15% - 10px)' }}>
             <span className={`w-5 h-5 rounded-full border-[3px] bg-white shadow-xs flex items-center justify-center transition-all duration-300 ${
               hoveredCard === 2023 ? "border-[#3B82F6] scale-130 shadow-md" : "border-[#2563EB]"
             }`}>
@@ -218,7 +236,7 @@ const ExperienceSection = () => {
             </span>
           </div>
 
-          <div className="absolute top-[90px] left-[490px] z-10 flex h-5 w-5 items-center justify-center">
+          <div className="absolute z-10 flex h-5 w-5 items-center justify-center" style={{ top: '155px', left: 'calc(50% - 10px)' }}>
             <span className={`w-5 h-5 rounded-full border-[3px] bg-white shadow-xs flex items-center justify-center transition-all duration-300 ${
               hoveredCard === 2024 ? "border-[#3B82F6] scale-130 shadow-md" : "border-[#2563EB]"
             }`}>
@@ -228,7 +246,7 @@ const ExperienceSection = () => {
             </span>
           </div>
 
-          <div className="absolute top-[104px] left-[740px] z-10 flex h-5 w-5 items-center justify-center">
+          <div className="absolute z-10 flex h-5 w-5 items-center justify-center" style={{ top: '110px', left: 'calc(86% - 10px)' }}>
             <span className={`w-5 h-5 rounded-full border-[3px] bg-white shadow-xs flex items-center justify-center transition-all duration-300 ${
               hoveredCard === 2026 ? "border-[#3B82F6] scale-130 shadow-md" : "border-[#2563EB]"
             }`}>
@@ -238,8 +256,8 @@ const ExperienceSection = () => {
             </span>
           </div>
 
-          {/* Milestone Cards placement */}
-          <div className="absolute top-[160px] left-0 w-full grid grid-cols-3 gap-8">
+          {/* Cards — start at 240px (connectors end at y=238) */}
+          <div className="absolute top-[240px] left-0 w-full grid grid-cols-3 gap-8">
             {milestones.map((milestone) => {
               const MilestoneIcon = milestone.icon;
               const isHovered = hoveredCard === milestone.id;

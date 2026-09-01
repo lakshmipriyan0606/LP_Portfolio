@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowRight, Github, X, Cpu, CheckCircle } from "lucide-react";
 import img1 from "../../assets/images/daily.png"; // DailyTracker
 import img2 from "../../assets/images/travel.png"; // Travel
@@ -42,33 +42,56 @@ const ProjectsSection = () => {
     }
   ];
 
+  const headerRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.3 });
+  const cardsRef = useRef(null);
+  const isCardsInView = useInView(cardsRef, { once: true, amount: 0.1 });
+
   return (
     <section id="projects" className="py-16 md:py-20 bg-[#FCFCFD] border-b border-[#E4EAF2] px-8 md:px-16">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-4">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-4" ref={headerRef}>
         
-        {/* Section Label */}
-        <span className="font-mono text-[10px] tracking-[0.25em] text-[#8491A6] uppercase block font-bold text-left">
+        {/* Section Label — slides in from left */}
+        <motion.span
+          initial={{ opacity: 0, x: -24 }}
+          animate={isHeaderInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="font-mono text-[10px] tracking-[0.25em] text-[#8491A6] uppercase block font-bold text-left"
+        >
           02 / SELECTED WORK
-        </span>
+        </motion.span>
 
-        {/* Section Header */}
-        <div className="mb-20 text-left">
-          <h2 className="text-3xl md:text-[44px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
+        {/* Animated underline */}
+        <motion.span
+          className="block h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent rounded-full mb-2"
+          initial={{ width: 0 }}
+          animate={isHeaderInView ? { width: 48 } : { width: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+        />
+
+        {/* Section Header — clip reveal */}
+        <div className="mb-20 text-left overflow-hidden">
+          <motion.h2
+            className="text-3xl md:text-[44px] font-extrabold text-[#0F172A] leading-tight tracking-tight"
+            initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
+            animate={isHeaderInView ? { opacity: 1, clipPath: "inset(0 0 0% 0)" } : {}}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          >
             Products I've built<br />
             and problems I've solved.
-          </h2>
+          </motion.h2>
         </div>
 
-        {/* 2-Column Grid Layout (Optimized for 2 Projects) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[900px] mx-auto">
-          {projects.map((project) => (
+        {/* 2-Column Grid — staggered card entrance */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[900px] mx-auto" ref={cardsRef}>
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="group flex flex-col justify-between bg-white border border-[#E4EAF2] rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgba(15,23,42,0.01)] hover:shadow-[0_20px_50px_rgba(37,99,235,0.06)] hover:border-[#2563EB]/25 hover:-translate-y-1.5 transition-all duration-300 text-left h-full"
+              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              animate={isCardsInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: index * 0.15 }}
+              className="group flex flex-col justify-between bg-white border border-[#E4EAF2] rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgba(15,23,42,0.01)] hover:shadow-[0_20px_50px_rgba(37,99,235,0.08)] hover:border-[#2563EB]/25 hover:-translate-y-2 transition-all duration-300 text-left h-full cursor-pointer"
+              whileHover={{ y: -6 }}
             >
               <div>
                 {/* Browser Mockup Image Container */}

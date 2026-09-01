@@ -1,4 +1,24 @@
 /* Core App CSS & Global Reset */
+
+/* ══ ALWAYS FORCE LIGHT MODE — ignore system dark preference ══ */
+:root,
+html,
+html.dark {
+  color-scheme: light !important;
+  background-color: #FCFCFD !important;
+  color: #0F172A !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  html {
+    color-scheme: light !important;
+    background-color: #FCFCFD !important;
+    color: #0F172A !important;
+  }
+}
+
+
 * {
   margin: 0;
   padding: 0;

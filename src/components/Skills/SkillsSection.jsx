@@ -249,72 +249,122 @@ const SkillsSection = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        {/* Section Label */}
-        <motion.span variants={itemVariants} className="font-mono text-[10px] tracking-[0.25em] text-[#8491A6] uppercase block font-bold text-left">
+        {/* Section Label — slide from left */}
+        <motion.span
+          initial={{ opacity: 0, x: -24 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="font-mono text-[10px] tracking-[0.25em] text-[#8491A6] uppercase block font-bold text-left"
+        >
           04 / STACK
         </motion.span>
 
-        {/* Section Header */}
-        <motion.div variants={itemVariants} className="mb-16 text-left">
-          <h2 className="text-3xl md:text-[44px] font-bold text-[#0F172A] leading-tight tracking-tight">
-            Technical Capabilities & Stack.
-          </h2>
-        </motion.div>
+        {/* Animated accent line */}
+        <motion.span
+          className="block h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent rounded-full mb-2"
+          initial={{ width: 0 }}
+          animate={isInView ? { width: 48 } : { width: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+        />
 
-        {/* Capabilities & Stack Rows */}
+        {/* Section Header — clip reveal */}
+        <div className="mb-16 text-left overflow-hidden">
+          <motion.h2
+            className="text-3xl md:text-[44px] font-bold text-[#0F172A] leading-tight tracking-tight"
+            initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
+            animate={isInView ? { opacity: 1, clipPath: "inset(0 0 0% 0)" } : {}}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          >
+            Technical Capabilities &amp; Stack.
+          </motion.h2>
+        </div>
+
+        {/* Capabilities rows — staggered slide in from left */}
         <div className="flex flex-col border-t border-[#E4EAF2]">
-          {capabilities.map((item) => {
+          {capabilities.map((item, index) => {
             const IconComp = item.icon;
             const isHovered = hoveredId === item.id;
             return (
               <motion.div
                 key={item.num}
-                variants={itemVariants}
+                initial={{ opacity: 0, x: -36 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.2 + index * 0.1 }}
                 onMouseEnter={() => setHoveredId(item.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="grid grid-cols-1 lg:grid-cols-12 py-8 items-center border-b border-[#E4EAF2] hover:bg-white/60 hover:shadow-[0_8px_30px_rgba(15,23,42,0.02)] transition-all duration-300 group relative text-left"
+                className="grid grid-cols-1 lg:grid-cols-12 py-8 items-center border-b border-[#E4EAF2] hover:bg-white/80 hover:shadow-[0_8px_30px_rgba(15,23,42,0.03)] transition-all duration-300 group relative text-left"
               >
-                {/* Absolute left active line (avoids shifting card borders) */}
-                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#2563EB] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 rounded-r-lg" />
+                {/* Left active border */}
+                <motion.div
+                  className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#2563EB] rounded-r-lg"
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: isHovered ? 1 : 0 }}
+                  transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ originY: 0.5 }}
+                />
 
-                {/* COLUMN 1: Number (col-span-1) */}
+                {/* COLUMN 1: Number */}
                 <div className="lg:col-span-1 mb-2 lg:mb-0 text-left pl-3">
-                  <span className="font-mono text-xs text-[#8491A6] group-hover:text-[#2563EB] transition-colors font-bold">
+                  <motion.span
+                    className="font-mono text-xs text-[#8491A6] font-bold"
+                    animate={{ color: isHovered ? "#2563EB" : "#8491A6" }}
+                    transition={{ duration: 0.2 }}
+                  >
                     {item.num}
-                  </span>
+                  </motion.span>
                 </div>
 
-                {/* COLUMN 2: Title & Details (col-span-5) */}
+                {/* COLUMN 2: Title & Details */}
                 <div className="lg:col-span-5 flex gap-4 items-start pr-4 text-left">
-                  <div className="w-10 h-10 rounded-xl bg-[#F6F9FF] border border-[#E1E9F5] flex items-center justify-center text-[#8491A6] group-hover:bg-[#EFF6FF] group-hover:text-[#2563EB] transition-colors shrink-0">
+                  <motion.div
+                    className="w-10 h-10 rounded-xl bg-[#F6F9FF] border border-[#E1E9F5] flex items-center justify-center text-[#8491A6] shrink-0"
+                    animate={isHovered ? { backgroundColor: "#EFF6FF", color: "#2563EB", scale: 1.08 } : { scale: 1 }}
+                    transition={{ duration: 0.25 }}
+                  >
                     <IconComp size={16} className="stroke-[1.5]" />
-                  </div>
+                  </motion.div>
                   <div className="flex flex-col min-w-0">
-                    <span className="text-[15px] font-bold tracking-wide text-[#0F172A] group-hover:text-[#2563EB] transition-colors mb-1">
+                    <motion.span
+                      className="text-[15px] font-bold tracking-wide mb-1"
+                      animate={{ color: isHovered ? "#2563EB" : "#0F172A" }}
+                      transition={{ duration: 0.2 }}
+                    >
                       {item.title}
-                    </span>
+                    </motion.span>
                     <span className="text-[13px] text-[#526079] leading-relaxed mb-4">
                       {item.desc}
                     </span>
-
-                    {/* Integrated Technology chips inside row */}
                     <div className="flex flex-wrap gap-1.5 mt-1">
-                      {item.techs.map((tech) => (
-                        <span
+                      {item.techs.map((tech, ti) => (
+                        <motion.span
                           key={tech}
-                          className="px-2 py-0.5 text-[9.5px] font-mono bg-[#F8FAFC] border border-[#E4EAF2] text-[#64748B] rounded font-semibold group-hover:bg-[#F1F6FF] group-hover:border-[#2563EB]/15 group-hover:text-[#2563EB] transition-colors"
+                          className="px-2 py-0.5 text-[9.5px] font-mono border rounded font-semibold"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                          transition={{ delay: 0.3 + index * 0.1 + ti * 0.04, duration: 0.4 }}
+                          style={{
+                            background: isHovered ? "#F1F6FF" : "#F8FAFC",
+                            borderColor: isHovered ? "rgba(37,99,235,0.2)" : "#E4EAF2",
+                            color: isHovered ? "#2563EB" : "#64748B",
+                            transition: "background 0.2s, border-color 0.2s, color 0.2s"
+                          }}
                         >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
                   </div>
                 </div>
 
-                {/* COLUMN 3: SVG Flowchart Diagram (col-span-6) */}
-                <div className="lg:col-span-6 flex justify-start lg:justify-end items-center mt-6 lg:mt-0 w-full overflow-x-auto">
+                {/* COLUMN 3: Diagram */}
+                <motion.div
+                  className="lg:col-span-6 flex justify-start lg:justify-end items-center mt-6 lg:mt-0 w-full overflow-x-auto"
+                  initial={{ opacity: 0 }}
+                  animate={isInView ? { opacity: 1 } : {}}
+                  transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
+                >
                   {item.diagram}
-                </div>
+                </motion.div>
               </motion.div>
             );
           })}
